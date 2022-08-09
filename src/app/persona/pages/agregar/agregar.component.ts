@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PersonaService } from '../../services/persona.service';
 
 @Component({
   selector: 'app-agregar',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgregarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private personaService: PersonaService) { }
 
   ngOnInit(): void {
+  }
+
+  addPersona(){
+    
   }
 
 }

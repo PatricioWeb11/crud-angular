@@ -1,5 +1,10 @@
 <div class="tabla">
     <h2>Listado de Personas</h2>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Agregar Persona
+    </button>
     <table class="table table-hover">
         <thead>
             <tr>
@@ -10,42 +15,32 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Patricio Fuenzalida</td>
-                <td>32</td>
+            <tr *ngFor="let persona of personas">
+                <th scope="row">{{persona._id}}</th>
+                <td>{{persona.nombre}}</td>
+                <td>{{persona.edad}}</td>
                 <td>
-                    <button type="button" class="btn btn-warning">Editar</button>&nbsp;
-                    <button type="button" class="btn btn-danger">Eliminar</button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">1</th>
-                <td>Patricio Fuenzalida</td>
-                <td>32</td>
-                <td>
-                    <button type="button" class="btn btn-warning">Editar</button>&nbsp;
-                    <button type="button" class="btn btn-danger">Eliminar</button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">1</th>
-                <td>Patricio Fuenzalida</td>
-                <td>32</td>
-                <td>
-                    <button type="button" class="btn btn-warning">Editar</button>&nbsp;
-                    <button type="button" class="btn btn-danger">Eliminar</button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">1</th>
-                <td>Patricio Fuenzalida</td>
-                <td>32</td>
-                <td>
-                    <button type="button" class="btn btn-warning">Editar</button>&nbsp;
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Editar
+                    </button>&nbsp;
                     <button type="button" class="btn btn-danger">Eliminar</button>
                 </td>
             </tr>
         </tbody>
     </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ingrese una Persona</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <app-agregar></app-agregar>
+            </div>
+        </div>
+    </div>
 </div>
